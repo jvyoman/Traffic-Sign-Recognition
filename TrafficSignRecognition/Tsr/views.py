@@ -1,7 +1,17 @@
 from django.http.response import HttpResponse
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.core.files.storage import FileSystemStorage
+
 # Create your views here.
+import numpy
+import tensorflow as tf
+from tensorflow import keras
+from keras.models import load_model
+from keras.preprocessing import image
+img_height=224
+img_width=224
+model = load_model('ML_model/traffic_classifier.h5')
 def index(request):
     if request.method == 'POST' and request.FILES['img1']:
 
