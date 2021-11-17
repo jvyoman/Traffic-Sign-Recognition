@@ -6,3 +6,4 @@ urlpatterns = [
     path('',views.index),
     path('detect',views.index)
 ]
+

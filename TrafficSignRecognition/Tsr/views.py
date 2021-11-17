@@ -12,6 +12,7 @@ from keras.preprocessing import image
 img_height=224
 img_width=224
 model = load_model('ML_model/traffic_classifier.h5')
+
 def index(request):
     if request.method == 'POST' and request.FILES['img1']:
 
