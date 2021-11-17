@@ -48,8 +48,23 @@ def index(request):
             41:'Roundabout mandatory', 
             42:'End of no passing', 
             43:'End no passing veh > 3.5 tons' }
-
-        return render(request,'index.html')
+        
+        fileobj=request.FILES['img1']   
+        fs=FileSystemStorage()
+        filepathname=fs.save(fileobj.name,fileobj)
+        filepathname=fs.url(filepathname)
+        testimage='.'+filepathname
+        img = image.load_img(testimage)
+        img=img.resize((30,30))
+        #x = image.img_to_array(img)
+        #x=x/255
+        #x=x.reshape(1,30, 30,3)
+        img=numpy.expand_dims(img,axis=0)
+        img = numpy.array(img)
+        pred = model.predict_classes([img])[0]
+        sign = classes[pred+1]
+        print(sign)
+        return render(request,'index.html',{'image':filepathname,'sign':sign})
     
     else:
-            return render(request,'index.html')
+        return render(request,'index.html')
