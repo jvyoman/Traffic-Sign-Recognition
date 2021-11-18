@@ -12,68 +12,160 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     
     <style>
-        .upload-btn-wrapper {
-            position: relative;
+        .frame {
+            position: absolute;
+            width: 99%;
+            height: 98%;
+            border-radius: 2px;
+            box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
             overflow: hidden;
-            display: inline-block;
-            }
+            background: linear-gradient(to top right, darkmagenta 0%, hotpink 100%);
+            color: #333;
+            font-family: "Open Sans", Helvetica, sans-serif;
+        }
+
+        .left {
+            position: absolute;
+            padding: 5px;
+            top: 40%;
+            left: 40%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 260px;
+            border-radius: 3px;
+            box-shadow: 8px 10px 15px 0 rgba(0, 0, 0, 0.2);
+            background: #fff;
+            align-items: center;
+            display:block;
+            justify-content: space-evenly;
+            flex-direction: column;
+        }
+        
+        .right {
+            position: absolute;
+            top: 40%;
+            right: 25%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 260px;
+            border-radius: 3px;
+            box-shadow: 8px 10px 15px 0 rgba(0, 0, 0, 0.2);
+            background: #fff;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .title {
+            margin-top:10%;
+            margin-left: 8%;
+            margin-bottom: 10px;
+            width: 80%;
+            border-bottom: 1px solid #999;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 16px;
+            font-weight: 300;
+            color: #666;
+        }
+
+        form {
+            margin-top:10%;
+            margin-left: 30%;
+            margin-bottom: 10px;
+            width: 100px;
+            height: 80px;
+            border: 1px dashed #999;
+            border-radius: 3px;
+            text-align: center;
+        }
+        
+        .app {
+            width: 100%;
+            height: 50px;
+            padding-top: 2%;
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: black;
+        }
+
+        .dropzone {
+            width: 100px;
+            height: 80px;
+            border: 1px dashed #999;
+            border-radius: 3px;
+            text-align: center;
+        }
+
+        .upload-icon {
+            margin: 25px 2px 2px 2px;
+        }
+
+        .upload-input {
+            position: block;
+            top: 5px;
+            left: 0;
+            margin: 5px;
+            opacity: 0;
+        }
 
         .btn {
-            border: 2px solid gray;
-            color: gray;
-            background-color: white;
-            padding: 8px 20px;
-            border-radius: 8px;
-            font-size: 20px;
-            font-weight: bold;
-            }
+            margin-top:10%;
+            margin-bottom: 10px;
+            display: inline-block;
+            width: 140px;
+            height: 40px;
+            background: darkmagenta;
+            color: #fff;
+            border-radius: 3px;
+            border: 0;
+            box-shadow: 0 3px 0 0 hotpink;
+            transition: all 0.3s ease-in-out;
+            font-size: 14px;
+        }
 
-        .upload-btn-wrapper input[type=file] {
-            font-size: 100px;
-            position: absolute;
-            left: 0;
-            top: 0;
-            opacity: 0;
-            }
-
+        .btn:hover {
+            background: rebeccapurple;
+            box-shadow: 0 3px 0 0 deeppink;
+        }
+            
+        
+            
     </style>
     
 </head>
 <body>
+
     
     <div >
         <header>
-            <div>
-                <span class=""></span>
-                <h1>Trafic Sign Detection</h1>
-
-                <form action="detect"  method="POST" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    <h1 class="head ">Welcome!</h1>
-                        <div class="upload-btn-wrapper">
-                            <button class="btn">Upload a file</button>
-                            <input type="file" name="img1" id="img1" />
-                        </div> <br><br>
-                    
-                        <button  class="button" type="submit" >Detect</button> <br>
-                    <div style="margin: 30px; "></div>
-
-
-                    
-                </form>
-                    <div>
-                        <h3> Detected Sign :</h3> <h3>{{sign}}</h3>
-                        <img src={{image}} alt='imagename'>
-                        
-                    </div>
-            </div>
         </header>
-        <main>
-            
-            
-            
-        </main>
-        
+
+        <div class="frame">
+            <h1 class="app">Trafic Sign Detection</h1>
+            <div class="left">
+                <div class="title">
+                    <h1>Select / Drop file to upload</h1>
+                </div>
+                    <form action="detect" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                            <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
+                            <input type="file" name="img1" id="img1" class="upload-input" />
+                            <button type="submit" class="btn" name="detectbutton">Detect Sign</button>   
+                    </form>
+            </div>
+            <div class="right">
+                
+                    <h3> Detected Sign :</h3> <h3>{{sign}}</h3>
+                    <img src={{image}} alt='imagename'>   
+                
+
+            </div>
+        </div>
     </div>
+</body>
 
                 
