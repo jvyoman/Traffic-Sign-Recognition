@@ -27,11 +27,11 @@
         .left {
             position: absolute;
             padding: 5px;
-            top: 40%;
-            left: 40%;
+            top: 57%;
+            left: 29%;
             transform: translate(-50%, -50%);
-            width: 300px;
-            height: 260px;
+            width: 400px;
+            height: 570px;
             border-radius: 3px;
             box-shadow: 8px 10px 15px 0 rgba(0, 0, 0, 0.2);
             background: #fff;
@@ -43,17 +43,18 @@
         
         .right {
             position: absolute;
-            top: 40%;
-            right: 25%;
+            top: 57%;
+            right: 3%;
             transform: translate(-50%, -50%);
-            width: 300px;
-            height: 260px;
+            width: 400px;
+            height: 570px;
             border-radius: 3px;
             box-shadow: 8px 10px 15px 0 rgba(0, 0, 0, 0.2);
             background: #fff;
             display: flex;
             align-items: center;
             flex-direction: column;
+
         }
 
         .title {
@@ -66,17 +67,18 @@
         }
 
         h1 {
-            font-size: 16px;
             font-weight: 300;
-            color: #666;
+            text-align: center;
+            font-size: 2.2em;
+            font-weight: bold;
+            color: black;   
         }
 
         form {
             margin-top:10%;
-            margin-left: 30%;
-            margin-bottom: 10px;
-            width: 100px;
-            height: 80px;
+            margin-left: 20%;
+            width: 230px;
+            height: 200px;
             border: 1px dashed #999;
             border-radius: 3px;
             text-align: center;
@@ -84,10 +86,10 @@
         
         .app {
             width: 100%;
-            height: 50px;
-            padding-top: 2%;
+            height: 30px;
+            padding-top: 0.7%;
             text-align: center;
-            font-size: 1.5em;
+            font-size: 2.9em;
             font-weight: bold;
             color: black;
         }
@@ -101,37 +103,56 @@
         }
 
         .upload-icon {
-            margin: 25px 2px 2px 2px;
+            
+            height: 180px;
+            width: 180px;
+            margin-left: -2%;
         }
 
         .upload-input {
             position: block;
-            top: 5px;
-            left: 0;
+            top: 100px;
+            left: 5000px;
             margin: 5px;
             opacity: 0;
+           
         }
 
         .btn {
-            margin-top:10%;
-            margin-bottom: 10px;
-            display: inline-block;
-            width: 140px;
-            height: 40px;
+            position: absolute;
+            top: 450px;
+            left: 53px;
+
+            width: 300px;
+            height: 80px;
             background: darkmagenta;
             color: #fff;
             border-radius: 3px;
             border: 0;
             box-shadow: 0 3px 0 0 hotpink;
             transition: all 0.3s ease-in-out;
-            font-size: 14px;
+            font-size: 32px;
         }
 
         .btn:hover {
-            background: rebeccapurple;
+            background: rgb(24, 3, 44);
             box-shadow: 0 3px 0 0 deeppink;
         }
-            
+
+        .imgmain {
+            height: 320px;
+            width: 320px;
+        }
+
+        .head {
+
+            text-align: center;
+            font-size: 2.2em;
+            font-weight: bold;
+            color: black;
+        }
+        
+     
         
             
     </style>
@@ -159,8 +180,8 @@
             </div>
             <div class="right">
                 
-                    <h3> Detected Sign :</h3> <h3>{{sign}}</h3>
-                    <img src={{image}} alt='imagename'>   
+                    <h1 class="head"> Detected Sign :</h1> <h1>{{sign}}</h1>
+                    <img class="imgmain" src={{image}} alt='imagename'>   
                 
 
             </div>
