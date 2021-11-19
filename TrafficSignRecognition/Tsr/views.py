@@ -75,7 +75,8 @@ def index(request):
         pred = model.predict_classes([img])[0]
         sign = classes[pred+1]
         print(sign)
-        return render(request,'index.html',{'image':filepathname,'sign':sign})
+    
+        return render(request,'detect.html',{'image':filepathname,'sign':sign})
     
     else:
         return render(request,'index.html')
