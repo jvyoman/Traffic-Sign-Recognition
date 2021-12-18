@@ -22,7 +22,7 @@ class TestTSR():
 
     
     def test_homePageTitle(self,setup):
-        self.driver.get("http://127.0.0.1:8000/")
+        self.driver.get("http://localhost:8000/")
         assert self.driver.title=="Traffic sign Detection"
 
     
