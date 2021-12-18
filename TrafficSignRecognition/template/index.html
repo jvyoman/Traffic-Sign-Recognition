@@ -21,7 +21,7 @@
             overflow: hidden;
             color: #333;
             font-family: "Open Sans", Helvetica, sans-serif;
-            background-color: #e5e5f7;
+            background-color: #c7c7e2;
             opacity: 0.8;
             background-image:  linear-gradient(30deg, #030638 12%, transparent 12.5%, transparent 87%, #04073f 87.5%, #040735), linear-gradient(150deg, #050842 12%, transparent 12.5%, transparent 87%, #050946 87.5%, #070a55), linear-gradient(30deg, #02054d 12%, transparent 12.5%, transparent 87%, #050955 87.5%, #04084e), linear-gradient(150deg, #030647 12%, transparent 12.5%, transparent 87%, #030641 87.5%, #030747), linear-gradient(60deg, #04074777 25%, transparent 25.5%, transparent 75%, #444cf777 75%, #444cf777), linear-gradient(60deg, #444cf777 25%, transparent 25.5%, transparent 75%, #444cf777 75%, #444cf777);
             background-size: 20px 35px;
@@ -37,7 +37,7 @@
             height: 570px;
             border-radius: 3px;
             box-shadow: 8px 10px 15px 0 rgba(0, 0, 0, 0.2);
-            background: #fff;
+            background: #030c22;
             align-items: center;
             display:block;
             justify-content: space-evenly;
@@ -53,7 +53,7 @@
             height: 570px;
             border-radius: 3px;
             box-shadow: 8px 10px 15px 0 rgba(0, 0, 0, 0.2);
-            background: #fff;
+            background: #030c22;
             display: flex;
             align-items: center;
             flex-direction: column;
@@ -125,7 +125,6 @@
             position: absolute;
             top: 450px;
             left: 53px;
-
             width: 300px;
             height: 80px;
             background: #444cf777;
@@ -161,6 +160,9 @@
             background: white;
             border-radius: 15%;
         }
+        .select {
+            color:rgb(211, 214, 216)
+        }
         
      
         
@@ -181,7 +183,7 @@
             </div>
             <div class="left">
                 <div class="title">
-                    <h1>Select / Drop file to upload</h1>
+                    <h1 class="select">Select / Drop file to upload</h1>
                 </div>
                     <form action="detect" method="POST" enctype="multipart/form-data">
                         {% csrf_token %}
