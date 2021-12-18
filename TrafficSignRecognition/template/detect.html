@@ -19,9 +19,13 @@
             border-radius: 2px;
             box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
             overflow: hidden;
-            background: linear-gradient(to top right, rgb(2, 99, 163) 0%, rgb(0, 255, 242) 100%);
             color: #333;
             font-family: "Open Sans", Helvetica, sans-serif;
+            background-color: #e5e5f7;
+            opacity: 0.8;
+            background-image:  linear-gradient(30deg, #030638 12%, transparent 12.5%, transparent 87%, #04073f 87.5%, #040735), linear-gradient(150deg, #050842 12%, transparent 12.5%, transparent 87%, #050946 87.5%, #070a55), linear-gradient(30deg, #02054d 12%, transparent 12.5%, transparent 87%, #050955 87.5%, #04084e), linear-gradient(150deg, #030647 12%, transparent 12.5%, transparent 87%, #030641 87.5%, #030747), linear-gradient(60deg, #04074777 25%, transparent 25.5%, transparent 75%, #444cf777 75%, #444cf777), linear-gradient(60deg, #444cf777 25%, transparent 25.5%, transparent 75%, #444cf777 75%, #444cf777);
+            background-size: 20px 35px;
+            background-position: 0 0, 0 0, 10px 18px, 10px 18px, 0 0, 10px 18px;
         }
         
 
@@ -129,11 +133,11 @@
 
             width: 300px;
             height: 80px;
-            background: rgb(26, 6, 209);
+            background: #444cf777;
             color: #fff;
             border-radius: 3px;
             border: 0;
-            box-shadow: 0 3px 0 0 rgb(2, 113, 165);
+            box-shadow: 0 3px 0 0 rgb(119, 4, 252);
             transition: all 0.3s ease-in-out;
             font-size: 32px;
         }
@@ -157,7 +161,11 @@
         }
         
      
-        
+        .logo1 {
+            margin-left: 40%;
+            background: white;
+            border-radius: 15%;
+        }
             
     </style>
     
@@ -171,19 +179,18 @@
 
         <div class="frame">
             
-            <h1 class="app">Traffic Sign Detection</h1>
-            
-            
-            <div class="left">
-                <div class="title">
-                    <h1>Select / Drop file to upload</h1>
-                </div>
-                    <form action="detect" method="POST" enctype="multipart/form-data">
-                        {% csrf_token %}
-                            <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
-                            <input type="file" name="img1" id="img1" class="upload-input" />
-                            <button type="submit" class="btn" name="detectbutton">Detect Sign</button>   
-                    </form>
+            <img src="https://i.imgur.com/nrO4MF6.png" class="logo1">
+        </div>
+        <div class="left">
+            <div class="title">
+                <h1>Select / Drop file to upload</h1>
+            </div>
+                <form action="detect" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                        <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
+                        <input type="file" name="img1" id="img1" class="upload-input" />
+                        <button type="submit" class="btn" name="detectbutton">Detect Sign</button>   
+                </form>
             </div>
             <div class="right">
                 
